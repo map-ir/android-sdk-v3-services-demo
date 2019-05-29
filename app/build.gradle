@@ -40,8 +40,8 @@ dependencies {
     implementation 'io.reactivex:rxandroid:1.2.1'
     implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     implementation 'ir.map.sdk:sdk_common:3.0.1'
-    implementation 'ir.map.sdk:sdk_map:3.0.3'
-    implementation 'ir.map.sdk:sdk_services:3.0.3'
+    implementation 'ir.map.sdk:sdk_map:3.0.4'
+    implementation 'ir.map.sdk:sdk_services:3.0.6'
     implementation  "com.mapbox.mapboxsdk:mapbox-sdk-services:3.4.1"
     implementation  "com.mapbox.mapboxsdk:mapbox-sdk-geojson:3.4.1"
     implementation  "com.mapbox.mapboxsdk:mapbox-android-telemetry:3.5.7"

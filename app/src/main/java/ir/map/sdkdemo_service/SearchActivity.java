@@ -2,10 +2,15 @@ package ir.map.sdkdemo_service;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 import ir.map.sdk_common.MapirLatLng;
 import ir.map.sdk_map.LatLngMapper;
@@ -52,6 +57,33 @@ public class SearchActivity extends AppCompatActivity implements
                             mMap = var1;
                             latLng = new MapirLatLng(35.6964895, 51.279745);
                             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLngMapper.toLatLng(latLng), 12));
+
+                            etSearch.addTextChangedListener(new TextWatcher() {
+                                @Override
+                                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                                }
+
+                                @Override
+                                public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                                }
+
+                                @Override
+                                public void afterTextChanged(Editable s) {
+                                    if (!s.toString().isEmpty() && s.toString().length() > 3) {
+                                        new Timer().schedule(new TimerTask() {
+                                            @Override
+                                            public void run() {
+                                                new ServiceHelper().autoCompleteSearch(
+                                                        etSearch.getText().toString(),
+                                                        latLng.latitude, latLng.longitude,
+                                                        null, SearchActivity.this);
+                                            }
+                                        }, 2000);
+                                    }
+                                }
+                            });
                         }
                     });
         }
@@ -80,6 +112,7 @@ public class SearchActivity extends AppCompatActivity implements
             case R.id.imgSearch:
                 new ServiceHelper()
                         .search(etSearch.getText().toString(), latLng.latitude, latLng.longitude, null, this);
+
                 break;
         }
     }
