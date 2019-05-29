@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- Primary route colors -->
+    <color name="mapir_layer_blue">#56A8FB</color>
+    <color name="mapir_layer_congestion_yellow">#F3A64F</color>
+    <color name="mapir_layer_congestion_red">#E93340</color>
+    <color name="mapir_shield_layer_color">#2F7AC6</color>
+
+    <!-- Alternative route colors -->
+    <color name="mapir_alternative_color">#8694A5</color>
+    <color name="mapir_alternative_congestion_yellow">#BEA087</color>
+    <color name="mapir_alternative_congestion_red">#B58281</color>
+    <color name="mapir_alternative_shield_color">#727E8D</color>
+
+    <color name="mapir_upcoming_maneuver_arrow_color">#FFFFFF</color>
+    <color name="mapir_upcoming_maneuver_arrow_border_color">#2d3f53</color>
+</resources>

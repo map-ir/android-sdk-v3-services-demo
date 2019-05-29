@@ -1,0 +1,53 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId 'ir.map.sdkdemo_service'
+        minSdkVersion 17
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    implementation 'ir.map.sdk:sdk_common:3.0.1'
+    implementation 'ir.map.sdk:sdk_map:3.0.3'
+    implementation 'ir.map.sdk:sdk_services:3.0.3'
+    implementation  "com.mapbox.mapboxsdk:mapbox-sdk-services:3.4.1"
+    implementation  "com.mapbox.mapboxsdk:mapbox-sdk-geojson:3.4.1"
+    implementation  "com.mapbox.mapboxsdk:mapbox-android-telemetry:3.5.7"
+    implementation  "com.mapbox.mapboxsdk:mapbox-android-gestures:0.3.0"
+
+    // for testApp
+    implementation  'com.mapbox.mapboxsdk:mapbox-sdk-turf:3.4.1'
+    implementation 'com.android.support:multidex:1.0.3'
+}
